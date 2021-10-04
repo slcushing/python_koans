@@ -11,7 +11,7 @@ class AboutLists(Koan):
     def test_creating_lists(self):
         empty_list = list()
         self.assertEqual(list, type(empty_list))
-        self.assertEqual(__, len(empty_list))
+        self.assertEqual(0, len(empty_list))
 
     def test_list_literals(self):
         nums = list()
@@ -21,23 +21,23 @@ class AboutLists(Koan):
         self.assertEqual([1], nums)
 
         nums[1:] = [2]
-        self.assertListEqual([1, __], nums)
+        self.assertListEqual([1, 2], nums)
 
         nums.append(333)
-        self.assertListEqual([1, 2, __], nums)
+        self.assertListEqual([1, 2, 333], nums)#.append: add item to the end of the list https://docs.python.org/3/tutorial/datastructures.html
 
     def test_accessing_list_elements(self):
         noms = ['peanut', 'butter', 'and', 'jelly']
 
-        self.assertEqual(__, noms[0])
-        self.assertEqual(__, noms[3])
-        self.assertEqual(__, noms[-1])
-        self.assertEqual(__, noms[-3])
+        self.assertEqual('peanut', noms[0])#lists in python are zero indexed
+        self.assertEqual('jelly', noms[3])
+        self.assertEqual('jelly', noms[-1])
+        self.assertEqual('butter', noms[-3])#using the index to access the list elements
 
     def test_slicing_lists(self):
         noms = ['peanut', 'butter', 'and', 'jelly']
 
-        self.assertEqual(__, noms[0:1])
+        self.assertEqual(__, noms[0:1]) #https://www.educative.io/edpresso/how-to-use-the-slice-method-in-python
         self.assertEqual(__, noms[0:2])
         self.assertEqual(__, noms[2:2])
         self.assertEqual(__, noms[2:20])
